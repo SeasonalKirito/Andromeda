@@ -55,7 +55,6 @@ local credits = window.new({
 local debug = window.new({
     text = "Debug",
 })
-
 main.show()
 
 -- << ESP >> --
@@ -92,8 +91,16 @@ local speed_boost = misc.new("slider", {
 
 -- << EXPLOITS >> --
 
-local anti_eyes = exploits.new("switch", {
-    text = "Anti Eyes",
+local anti_folder = exploits.new("folder", {
+    text = "Anti's",
+})
+
+local anti_eyes = anti_folder.new("switch", {
+    text = "Anti-Eyes",
+})
+
+local anti_dupe = anti_folder.new("switch", {
+    text = "Anti-Dupe",
 })
 
 -- << DEBUG >> --
@@ -195,14 +202,14 @@ lp:GetAttributeChangedSignal("CurrentRoom"):Connect(function()
     --     end
     -- end
 
-    -- if currentRoomModel then
-    --     for _, asset in pairs(currentRoomModel:GetDescendants()) do
-    --         if objectiveESP.on then
-    --             task.spawn(Script.Functions.ObjectiveESP, asset)
-    --         end
-    --         --...
-    --     end
-    -- end
+    if currentRoomModel then
+        for _, asset in pairs(currentRoomModel:GetDescendants()) do
+            if anti_dupe.on then
+                task.spawn(Script.Functions.ObjectiveESP, asset)
+            end
+            --...
+        end
+    end
 end)
 
 RunService.RenderStepped:Connect(function()

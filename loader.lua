@@ -4,11 +4,14 @@ until game:IsLoaded()
 
 local placeID = game.PlaceId
 local github = "https://raw.githubusercontent.com/SeasonalKirito/Andromeda/main/"
+local supported = github.."supported.lua"
+local games = loadstring(game:HttpGet(supported))()
 
-if placeID == 6516141723 then
-    loadstring(game:HttpGet(github .. "places/lobby.lua"))()
-elseif placeID == 6839171747 or placeID == 2 then
-    loadstring(game:HttpGet(github .. "places/main.lua"))()
-else
-    print("Place not supported.")
+for _, v in pairs(games) do
+    if v == placeID then
+        loadstring(game:HttpGet(github.."games/"..placeID..".lua", true))()
+        break
+    else
+        loadstring(game:HttpGet(github.."universal.lua", true))()
+    end
 end
