@@ -212,14 +212,8 @@ RunService.RenderStepped:Connect(function()
     end
     if auto_replay.on then
         if lp.Character.Humanoid.Health == 0 then
-            if auto_replay_wait then
-                return
-            else
-                auto_replay_wait = true
-                task.wait(4)
-                game:GetService("ReplicatedStorage"):WaitForChild("RemotesFolder"):WaitForChild("PlayAgain"):FireServer()
-                auto_replay_wait = false
-            end
+            task.wait(4.5)
+            game:GetService("ReplicatedStorage"):WaitForChild("RemotesFolder"):WaitForChild("PlayAgain"):FireServer()
         end
     end
     if anti_eyes.on then
