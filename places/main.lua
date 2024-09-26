@@ -28,7 +28,7 @@ local Script = {
 
 
 local window = engine.new({
-    text = "Darko | Doors | "..game.PlaceId,
+    text = "Andromeda | "..game.PlaceId,
     size = Vector2.new(450, 200),
     color = Color3.fromRGB(115,100,157),
 })
