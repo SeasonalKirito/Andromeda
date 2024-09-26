@@ -1,5 +1,5 @@
 # Andromeda
 A Roblox Doors Scripts that is open source and simple.
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/SeasonalKirito/Andromeda/refs/heads/main/loader.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/SeasonalKirito/Andromeda/main/loader.lua"))()
 ```
