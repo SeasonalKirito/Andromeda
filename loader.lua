@@ -3,7 +3,8 @@ repeat
 until game:IsLoaded()
 
 local github = "https://raw.githubusercontent.com/SeasonalKirito/Andromeda/main/"
-local games = loadstring(game:HttpGet(github.."supported.lua"))()
+local supported = github.."supported.lua"
+local games = loadstring(game:HttpGet(supported))()
 
 for _, v in pairs(games) do
     if v == game.PlaceId then
