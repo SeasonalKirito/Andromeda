@@ -10,7 +10,6 @@ local games = loadstring(supported)()
 for _, v in pairs(games) do
     if v == placeID then
         loadstring(game:HttpGet(github.."places/"..placeID..".lua", true))()
-        found = true
         break
     else
         loadstring(game:HttpGet(github.."universal.lua", true))()
