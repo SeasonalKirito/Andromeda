@@ -35,7 +35,7 @@ end
 local engine = loadstring(game:HttpGet("https://raw.githubusercontent.com/Singularity5490/rbimgui-2/main/rbimgui-2.lua"))()
 
 local window1 = engine.new({
-    text = "Andromeda | "..tostring(game.Name),
+    text = "Andromeda | "..game.PlaceId,
     size = UDim2.new(300, 200),
 })
 
