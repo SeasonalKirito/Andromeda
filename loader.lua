@@ -3,7 +3,7 @@ repeat
 until game:IsLoaded()
 
 local placeID = game.PlaceId
-local github = "https://raw.githubusercontent.com/SeasonalKirito/Andromeda/refs/heads/main/"
+local github = "https://raw.githubusercontent.com/SeasonalKirito/Andromeda/main/"
 local supported = game:HttpGet(github.."supported.lua")
 local games = loadstring(supported)()
 
