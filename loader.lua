@@ -3,13 +3,13 @@ repeat
 until game:IsLoaded()
 
 local placeID = game.PlaceId
-local github = "https://raw.githubusercontent.com/SeasonalKirito/Andromeda/main/"
+local github = "https://raw.githubusercontent.com/SeasonalKirito/Andromeda/refs/heads/main/"
 local supported = game:HttpGet(github.."supported.lua")
 local games = loadstring(supported)()
 
 for _, v in pairs(games) do
     if v == placeID then
-        loadstring(game:HttpGet(github.."games/"..placeID..".lua", true))()
+        loadstring(game:HttpGet(github.."places/"..placeID..".lua", true))()
         found = true
         break
     else
