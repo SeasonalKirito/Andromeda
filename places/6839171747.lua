@@ -28,7 +28,7 @@ local Script = {
 
 
 local window = engine.new({
-    text = "Andromeda | "..game.PlaceId,
+    text = "Andromeda | "..tostring(game.Name),
     size = Vector2.new(450, 200),
     color = Color3.fromRGB(115,100,157),
 })
