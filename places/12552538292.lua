@@ -20,6 +20,7 @@ local Window = ImGui:CreateWindow({
 	Title = "Andromeda | "..game.PlaceId,
 	Size = UDim2.fromOffset(350, 500),
 	Position = UDim2.new(0.45, 0, 0.5, 0),
+	NoResize = true,
 })
 
 --<< Main >>--
