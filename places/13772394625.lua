@@ -21,6 +21,15 @@ local Window = ImGui:CreateWindow({
 	Size = UDim2.fromOffset(350, 500),
 	Position = UDim2.new(0.45, 0, 0.5, 0),
     NoResize = true,
+    Colors = {
+		Window = {
+			BackgroundColor3 = Color3.fromRGB(10, 10, 10),
+			BackgroundTransparency = 0.1,
+            TitleBar = {
+                BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+            },
+        },
+    },
 })
 
 --<< Main >>--
