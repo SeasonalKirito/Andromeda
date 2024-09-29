@@ -48,9 +48,42 @@ local console = main:Console({
 	AutoScroll = true,
 })
 
+local god_mode = main:Checkbox({
+	Label = "God Mode",
+	Callback = function(self, Value)
+		Script.Functions.GodMode(Value)
+	end
+})
+
 
 
 --<< Functions >>--
+function Script.Functions.GodMode(Value: boolean)
+	if Value then
+		for _, v in pairs(workspace:WaitForChild("Rooms"):GetDescendants()) do
+			if v.Name == "Locker" and v:IsA("Model") then
+				local original_cframe = lplr.Character.HumanoidRootPart.CFrame
+				lplr.Character.HumanoidRootPart.CFrame = v:FindFirstChild("Base").CFrame
+				v:FindFirstChild("Folder"):FindFirstChild("Enter"):InvokeServer()
+				lplr.Character.HumanoidRootPart.CFrame = original_cframe
+				break
+			end
+		end
+		--Script.Functions.Log(console, "SUCCESS", "Enabled Godmode", "rgb(0, 204, 102)", true)
+	else
+		for _, v in pairs(workspace:WaitForChild("Rooms"):GetDescendants()) do
+			if v.Name == "Locker" and v:IsA("Model") then
+				local original_cframe = lplr.Character.HumanoidRootPart.CFrame
+				lplr.Character.HumanoidRootPart.CFrame = v:FindFirstChild("Base").CFrame
+				v:FindFirstChild("Folder"):FindFirstChild("Exit"):InvokeServer()
+				lplr.Character.HumanoidRootPart.CFrame = original_cframe
+				break
+			end
+		end
+		--Script.Functions.Log(console, "SUCCESS", "Disabled Godmode", "rgb(0, 204, 102)", true)
+	end
+end
+
 function Script.Functions.Log(object: any, title: string, description: string, color: string, full: boolean)
 	if full then
 		object:AppendText("<font color='"..tostring(color).."'>["..tostring(title).."] "..tostring(description).."</font>")
