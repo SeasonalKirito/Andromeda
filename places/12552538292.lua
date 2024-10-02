@@ -14,6 +14,37 @@ local Script = {
     Functions = {},
 }
 
+--<< Functions >>--
+function Script.Functions.GodMode(Value: boolean)
+	for _, v in pairs(workspace.Rooms:GetDescendants()) do
+		if v.Name == "Locker" and v:IsA("Model") and v.Parent:IsA("Model") then
+			local original_cframe = lplr.Character.HumanoidRootPart.CFrame
+			lplr.Character.HumanoidRootPart.CFrame = v.Root.CFrame
+			task.wait(0.5)
+			if Value then
+				v:FindFirstChild("Folder"):FindFirstChild("Enter"):InvokeServer()
+			else
+				v:FindFirstChild("Folder"):FindFirstChild("Exit"):FireServer()
+			end
+			task.wait(1)
+			lplr.Character.HumanoidRootPart.CFrame = original_cframe
+			break
+		end
+	end
+	--Script.Functions.Log(console, "SUCCESS", "Enabled Godmode", "rgb(0, 204, 102)", true)
+	--Script.Functions.Log(console, "SUCCESS", "Disabled Godmode", "rgb(0, 204, 102)", true)
+end
+
+function Script.Functions.Log(object: any, title: string, description: string, color: string, full: boolean)
+	if full then
+		object:AppendText("<font color='"..tostring(color).."'>["..tostring(title).."] "..tostring(description).."</font>")
+		return
+	else
+		object:AppendText("<font color='"..tostring(color).."'>["..tostring(title).."]</font>"..tostring(description))
+		return
+	end
+end
+
 --<< UI >>--
 local ImGui = loadstring(game:HttpGet('https://github.com/depthso/Roblox-ImGUI/raw/main/ImGui.lua'))()
 local Window = ImGui:CreateWindow({
@@ -54,39 +85,6 @@ local god_mode = main:Checkbox({
 		Script.Functions.GodMode(Value)
 	end
 })
-
-
-
---<< Functions >>--
-function Script.Functions.GodMode(Value: boolean)
-	for _, v in pairs(workspace.Rooms:GetDescendants()) do
-		if v.Name == "Locker" and v:IsA("Model") and v.Parent:IsA("Model") then
-			local original_cframe = lplr.Character.HumanoidRootPart.CFrame
-			lplr.Character.HumanoidRootPart.CFrame = v.Root.CFrame
-			task.wait(0.5)
-			if Value then
-				v:FindFirstChild("Folder"):FindFirstChild("Enter"):InvokeServer()
-			else
-				v:FindFirstChild("Folder"):FindFirstChild("Exit"):InvokeServer()
-			end
-			task.wait(1)
-			lplr.Character.HumanoidRootPart.CFrame = original_cframe
-			break
-		end
-	end
-	--Script.Functions.Log(console, "SUCCESS", "Enabled Godmode", "rgb(0, 204, 102)", true)
-	--Script.Functions.Log(console, "SUCCESS", "Disabled Godmode", "rgb(0, 204, 102)", true)
-end
-
-function Script.Functions.Log(object: any, title: string, description: string, color: string, full: boolean)
-	if full then
-		object:AppendText("<font color='"..tostring(color).."'>["..tostring(title).."] "..tostring(description).."</font>")
-		return
-	else
-		object:AppendText("<font color='"..tostring(color).."'>["..tostring(title).."]</font>"..tostring(description))
-		return
-	end
-end
 
 
 
