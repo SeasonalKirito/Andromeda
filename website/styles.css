@@ -1,3 +1,7 @@
+* {
+    font-family: 'Poppins';
+    text-decoration: none;
+}
 
 body {
     background: radial-gradient(circle, rgba(46,55,64,1) 15%, rgba(0,0,0,1) 100%);
@@ -5,17 +9,19 @@ body {
 
 .center-box {
     width: 450px;
-    height: 600px;
+    height: 175px;
     margin: 0 auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: radial-gradient(circle, rgba(30,36,42,1) 15%, rgba(0,0,0,1) 100%);
+    opacity: 0.9;
     text-align: center;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    justify-content: flex-end;
 }
 
 img {
@@ -24,19 +30,71 @@ img {
     display: block;
     margin: 0 auto;
     border-radius: 5px;
-    padding-bottom: 10px;
+    
 }
 
-.center-box .developer-container {
-    background: radial-gradient(circle, rgba(24,26,30,1) 15%, rgba(0,0,0,1) 100%);
-    border-radius: 5px;
-    padding: 10px;
-    display: flex;
+/* Add this to your existing CSS */
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animated-button {
+    margin-top: 15px;
+    display: inline-flex;
     align-items: center;
+    padding: 11px 16px;
+    background: radial-gradient(circle, rgba(89,96,114,1) 0%, rgba(0,0,0,1) 100%);
+    background-size: 300% 300%;
+    color: #ffffff;
+    border: 2px solid #201f1f;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 1000;
+    transition: all .5s ease;
+    width: 50%;
+    text-align: center;
+    justify-content: center;
 }
 
-.center-box .developer-container .text-right {
-    color: #ffffff;
-    font-size: 15px;
-    font-family: monospace;
+.animated-button:hover {
+    animation: gradient-animation 3s ease infinite;
+    background: radial-gradient(circle, rgba(108,116,136,1) 0%, rgba(0,0,0,1) 100%);
+    background-size: 300% 300%;
+    color: #e2e2e2;
+    box-shadow: 0 0 20px #302e2e;
 }
+
+/* .center-box .animated-button .download-icon {
+/*     margin-right: 10px;
+/*     width: 35px; /* Adjust the width as needed */
+/*     height: 35px; /* Adjust the height as needed */
+/* }
+
+/* .center-box .developer-container {
+/*     background: radial-gradient(circle, rgba(24,26,30,1) 15%, rgba(0,0,0,1) 100%);
+/*     border-radius: 5px;
+/*     padding: 10px;
+/*     display: flex;
+/*     align-items: center;
+/*     margin-top: 350px;
+/* }
+/* 
+/* .center-box .developer-container .text-right {
+/*     color: #ffffff;
+/*     font-size: 13px;
+/*     font-family: monospace;
+/* }
+/* 
+/* .center-box .developer-container .developer-photo {
+/*     width: 100px;
+/*     height: 100px;
+/*     margin-right: 10px;
+/* }
