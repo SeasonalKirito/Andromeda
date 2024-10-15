@@ -1,4 +1,4 @@
-![Banner](https://github.com/SeasonalKirito/Andromeda/blob/main/andromeda-banner.png?raw=true)
+![Banner](https://github.com/SeasonalKirito/Andromeda/blob/main/images/andromeda-banner.png?raw=true)
 ## Loader
 > [!CAUTION]
 > **Script hub can be discontinued at any time due to lack of importance.**
