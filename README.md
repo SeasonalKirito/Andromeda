@@ -5,4 +5,3 @@
 ```lua
 loadstring(game:HttpGet("https://raw.githubusercontent.com/SeasonalKirito/Andromeda/main/loader.lua"))()
 ```
-> Made by 1 dev btw (Tell synz devs to give me RocketCore UI)
