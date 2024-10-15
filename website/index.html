@@ -13,6 +13,20 @@
         <div class="center-box">
             <img src="./andromeda-banner.png" alt="Description of image">
 
+            <div class="changelog-container scrollable">
+                <script>
+                    fetch('https://raw.githubusercontent.com/SeasonalKirito/Andromeda/refs/heads/main/supported.lua')
+                        .then(response => response.text())
+                        .then(data => {
+                            const changelogContainer = document.querySelector('.changelog-container');
+                            changelogContainer.innerHTML = `<pre>${data}</pre>`;
+                        })
+                        .catch(error => {
+                            console.error('Error fetching changelog:', error);
+                        });
+                </script>
+            </div>
+
             <a href="https://github.com/SeasonalKirito/Andromeda" class="animated-button"></i> Download</a>
 
             <!-- <div class="developer-container">
