@@ -58,17 +58,17 @@ img {
 }
 
 .scrollable::-webkit-scrollbar-track {
-    background: #0e0e0e;
+    background: #2a3039;
     border-radius: 5px;
 }
 
 .scrollable::-webkit-scrollbar-thumb {
-    background: #1b1b1b;
+    background: #313e4a;
     border-radius: 5px;
 }
 
 .scrollable::-webkit-scrollbar-thumb:hover {
-    background: #464646;
+    background: #292d32;
 }
 
 /* Add this to your existing CSS */
@@ -89,7 +89,7 @@ img {
     display: inline-flex;
     align-items: center;
     padding: 11px 16px;
-    background: radial-gradient(circle, rgba(89,96,114,1) 0%, rgba(0,0,0,1) 100%);
+    background: radial-gradient(circle, rgba(68,81,96,1) 0%, rgba(0,0,0,1) 100%);
     background-size: 300% 300%;
     color: #ffffff;
     border: 2px solid #201f1f;
@@ -104,10 +104,15 @@ img {
 
 .animated-button:hover {
     animation: gradient-animation 3s ease infinite;
-    background: radial-gradient(circle, rgba(108,116,136,1) 0%, rgba(0,0,0,1) 100%);
+    background: radial-gradient(circle, rgba(79,94,111,1) 0%, rgba(0,0,0,1) 100%);
     background-size: 300% 300%;
     color: #e2e2e2;
     box-shadow: 0 0 20px #302e2e;
+}
+
+#cloud {
+    font-size: 22px;
+    margin-right: 10px;
 }
 
 /* .center-box .animated-button .download-icon {
