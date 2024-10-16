@@ -9,7 +9,7 @@ body {
 
 .center-box {
     width: 450px;
-    height: 355px;
+    height: 350px;
     margin: 0 auto;
     position: absolute;
     top: 50%;
@@ -45,7 +45,7 @@ img {
     font-size: 12px;
     justify-content: center;
     overflow-y: auto;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .scrollable {
